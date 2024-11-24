@@ -1,0 +1,193 @@
+/* Reset Default */
+body, h1, h2, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  background-color: hsla(0, 100%, 50%, 0.89);
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  text-align: center;
+}
+
+header .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+header .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+header a {
+  display: inline-block;
+  background: #4CAF50;
+  color: #ffffff;
+  padding:  10px 20px;
+  border-radius:8px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  background: #4CAF50;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Gaya umum untuk tombol */
+/* Gaya untuk kedua tombol */
+/* Pop-up Content */
+.popup-content {
+  background: rgba(18, 7, 172, 0.781);
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Susun elemen secara vertikal */
+  align-items: center; /* Pusatkan elemen */
+  justify-content: space-between; /* Space between untuk merapikan jarak */
+  height: auto; /* Sesuaikan tinggi konten */
+  max-height: 80vh; /* Maksimum tinggi pop-up untuk responsif */
+  overflow-y: auto; /* Menambahkan scroll jika terlalu tinggi */
+}
+
+/* Social Media Icons */
+#social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Jarak atas untuk ikon sosial media */
+  margin-bottom: 20px; /* Jarak bawah agar tidak rapat dengan tombol tutup */
+  gap: 15px; /* Memberikan jarak antar ikon */
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #f7fff7;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #f7fff7;
+  transform: scale(1.2); /* Membesar sedikit */
+}
+
+/* Tombol Kontak dan Pop-up */
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on buttons */
+.btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Tombol Tutup dengan jarak dari ikon sosial media */
+.popup-content button {
+  margin-top: 20px; /* Memberikan jarak antara ikon sosial media dan tombol tutup */
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%; /* Agar tombol tutup memiliki lebar penuh */
+}
+
+/* Efek hover pada tombol tutup */
+.popup-content button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Efek saat tombol ditekan */
+.popup-content button:active {
+  transform: scale(0.95);
+}
+
+/* Untuk memastikan tata letak pop-up responsif di layar kecil */
+@media screen and (max-width: 600px) {
+  .popup-content {
+    width: 80%; /* Pop-up akan memiliki lebar 80% dari layar */
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .popup-content button {
+    width: 100%; /* Tombol tutup akan memenuhi lebar pop-up */
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .social-icon {
+    font-size: 20px; /* Menurunkan ukuran ikon sosial media untuk layar kecil */
+  }
+
+  #social-links {
+    gap: 10px; /* Mengurangi jarak antar ikon pada layar kecil */
+  }
+}
+
+/* Menambahkan animasi untuk pop-up */
+@keyframes popup-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Menambahkan animasi saat pop-up muncul */
+.popup {
+  animation: popup-animation 0.3s ease-out forwards;
+}
+
+/* Efek saat pop-up ditutup */
+.popup-content {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.popup.fade-out {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
